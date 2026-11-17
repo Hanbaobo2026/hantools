@@ -1,0 +1,12 @@
+# 统一行尾，避免 Windows 下 CRLF/LF 反复产生整文件 diff
+* text=auto eol=lf
+
+# 二进制资源不做行尾转换
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# 锁文件与生成物在 diff 中折叠
+package-lock.json linguist-generated=true
