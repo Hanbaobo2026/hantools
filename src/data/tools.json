@@ -1,0 +1,385 @@
+{
+  "site": {
+    "name": "HanTools",
+    "origin": "https://tools.hanbaobo.cn",
+    "version": "0.2.0"
+  },
+  "categories": [
+    {
+      "slug": "misc",
+      "name": { "zh-CN": "编码与杂项", "en": "Encoding & Misc" },
+      "description": { "zh-CN": "处理常见 Base 系列、Hex、多层嵌套编码识别与字符集修复。", "en": "Base family, hex, nested encoding detection and charset repair." },
+      "icon": "🧩",
+      "order": 10
+    },
+    {
+      "slug": "crypto",
+      "name": { "zh-CN": "密码学", "en": "Cryptography" },
+      "description": { "zh-CN": "提供常见 Hash 计算、XOR 运算、古典密码及 RSA 常用参数计算。", "en": "Hashes, XOR, classical ciphers and common RSA calculations." },
+      "icon": "🔐",
+      "order": 20
+    },
+    {
+      "slug": "web",
+      "name": { "zh-CN": "Web 与网络", "en": "Web & Network" },
+      "description": { "zh-CN": "包含编解码转义、正则在线测试以及 Token 格式化校验。", "en": "Escaping/encoding, online regex testing and token formatting." },
+      "icon": "🌐",
+      "order": 30
+    },
+    {
+      "slug": "dev",
+      "name": { "zh-CN": "开发辅助", "en": "Developer Utilities" },
+      "description": { "zh-CN": "日常查验用的时间戳转换、位运算与 JSON 格式整理。", "en": "Timestamp conversion, bitwise math and JSON formatting." },
+      "icon": "🛠️",
+      "order": 40
+    }
+  ],
+  "tools": [
+    {
+      "key": "json",
+      "slug": "json",
+      "aliases": ["jsonformat", "jsonlint", "json-format"],
+      "category": "dev",
+      "name": { "zh-CN": "JSON 格式化与校验", "en": "JSON Formatter & Validator" },
+      "description": {
+        "zh-CN": "格式化、压缩、键排序与语法校验，报错精确到行列位置，全部在本地完成。",
+        "en": "Pretty-print, minify, sort keys and validate JSON with line/column errors."
+      },
+      "keywords": ["json", "格式化", "压缩", "校验", "lint", "pretty", "minify", "sort", "排序", "json解析"],
+      "tags": ["dev", "format"],
+      "privacy": "local",
+      "featured": true,
+      "order": 10,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "hash",
+      "slug": "hash",
+      "aliases": ["md5", "sha1", "sha256", "crc32", "hash-crack"],
+      "category": "crypto",
+      "name": { "zh-CN": "哈希计算与识别", "en": "Hash Calculator & Identifier" },
+      "description": {
+        "zh-CN": "MD5/SHA-1/SHA-2/SHA-3/Keccak/RIPEMD-160/CRC32，支持摘要长度识别与内置字典爆破。",
+        "en": "Compute and identify MD5/SHA/SHA-3/Keccak/RIPEMD-160/CRC32, with dictionary cracking."
+      },
+      "keywords": ["hash", "md5", "sha1", "sha256", "sha512", "sha3", "keccak", "ripemd160", "crc32", "哈希", "摘要", "爆破"],
+      "tags": ["ctf", "crypto"],
+      "privacy": "local",
+      "featured": true,
+      "order": 15,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "base64",
+      "slug": "base64",
+      "aliases": ["b64", "base32", "base16", "base"],
+      "category": "misc",
+      "name": { "zh-CN": "Base64 / Base32 / Base16 编解码", "en": "Base64 / Base32 / Base16 Codec" },
+      "description": {
+        "zh-CN": "支持标准与 URL-safe Base64、RFC 4648 Base32/Base16，可自动识别变体并容错解码。",
+        "en": "Standard and URL-safe Base64, RFC 4648 Base32/Base16 with variant auto-detection."
+      },
+      "keywords": ["base64", "base32", "base16", "b64", "urlsafe", "编码", "解码", "base家族"],
+      "tags": ["ctf", "misc", "encoding"],
+      "privacy": "local",
+      "featured": true,
+      "order": 20,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "magic",
+      "slug": "magic",
+      "aliases": ["auto-decode", "decode-chain", "编码识别"],
+      "category": "misc",
+      "name": { "zh-CN": "编码链自动识别", "en": "Auto Decode Chain" },
+      "description": {
+        "zh-CN": "自动尝试 Base64/Hex/URL/ROT/摩斯等多层编码，给出最可能的解码链与结果。",
+        "en": "Try stacked encodings automatically and rank the most likely decode chains."
+      },
+      "keywords": ["magic", "自动解码", "多层编码", "编码识别", "decode", "chain", "套娃"],
+      "tags": ["ctf", "misc"],
+      "privacy": "local",
+      "featured": true,
+      "order": 25,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "hex",
+      "slug": "hex",
+      "aliases": ["hexdump", "xxd", "十六进制"],
+      "category": "misc",
+      "name": { "zh-CN": "Hex 与 Hexdump 转换", "en": "Hex & Hexdump Converter" },
+      "description": {
+        "zh-CN": "文本与十六进制互转，生成或解析 xxd 风格 hexdump，支持自定义分隔符。",
+        "en": "Text to hex and back, generate or parse xxd-style hexdumps."
+      },
+      "keywords": ["hex", "hexdump", "xxd", "十六进制", "字节", "binary", "字节流"],
+      "tags": ["ctf", "misc"],
+      "privacy": "local",
+      "featured": false,
+      "order": 30,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "fileinfo",
+      "slug": "file",
+      "aliases": ["filetype", "magic-bytes", "strings"],
+      "category": "misc",
+      "name": { "zh-CN": "文件魔数识别与 strings", "en": "File Magic & strings" },
+      "description": {
+        "zh-CN": "识别文件真实类型（PNG / ZIP / ELF / PCAP…），提取 ASCII 与 UTF-16LE 字符串，并查看头部 hex。",
+        "en": "Identify file signatures and extract printable strings, entirely in the browser."
+      },
+      "keywords": ["文件", "魔数", "file", "filetype", "magic", "strings", "取证", "reverse", "pcap", "elf"],
+      "tags": ["ctf", "forensics"],
+      "privacy": "local",
+      "featured": true,
+      "order": 32,
+      "offline": true,
+      "since": "0.3.0"
+    },
+    {
+      "key": "zerowidth",
+      "slug": "zero-width",
+      "aliases": ["zw", "零宽", "invisible"],
+      "category": "misc",
+      "name": { "zh-CN": "零宽字符隐写", "en": "Zero-width Steganography" },
+      "description": {
+        "zh-CN": "把文本编码成零宽字符，或从可疑文本里解出隐藏内容，并统计不可见字符。",
+        "en": "Encode text into zero-width characters, decode hidden payloads and scan invisible chars."
+      },
+      "keywords": ["零宽", "zero-width", "zwsp", "zwnj", "隐写", "stego", "不可见字符"],
+      "tags": ["ctf", "misc"],
+      "privacy": "local",
+      "featured": false,
+      "order": 33,
+      "offline": true,
+      "since": "0.4.0"
+    },
+
+    {
+      "key": "charcode",
+      "slug": "ascii",
+      "aliases": ["charcode", "ord", "字符码", "ascii码"],
+      "category": "misc",
+      "name": { "zh-CN": "ASCII / 字符码转换", "en": "ASCII / Char Code Converter" },
+      "description": {
+        "zh-CN": "文本与十进制/十六进制/二进制/八进制码值互转，支持中文与 emoji，附 ASCII 表。",
+        "en": "Convert text to/from decimal, hex, binary and octal code points, with an ASCII table."
+      },
+      "keywords": ["ascii", "charcode", "ord", "字符码", "码值", "十进制", "十六进制", "二进制"],
+      "tags": ["ctf", "misc", "encoding"],
+      "privacy": "local",
+      "featured": false,
+      "order": 34,
+      "offline": true,
+      "since": "0.4.0"
+    },
+
+    {
+      "key": "qr",
+      "slug": "qr",
+      "aliases": ["qrcode", "二维码", "qr-scan"],
+      "category": "misc",
+      "name": { "zh-CN": "二维码生成与识别", "en": "QR Code Generator & Scanner" },
+      "description": {
+        "zh-CN": "生成可扫的二维码（可选纠错等级与尺寸），或从本地图片里识别二维码内容。",
+        "en": "Generate scannable QR codes and decode them from local images."
+      },
+      "keywords": ["二维码", "qr", "qrcode", "扫码", "生成", "识别", "离线"],
+      "tags": ["ctf", "misc", "image"],
+      "privacy": "local",
+      "featured": true,
+      "order": 36,
+      "offline": true,
+      "since": "0.4.0"
+    },
+
+    {
+      "key": "textfix",
+      "slug": "mojibake",
+      "aliases": ["garbled", "乱码", "encoding-fix"],
+      "category": "misc",
+      "name": { "zh-CN": "乱码修复（编码探测）", "en": "Mojibake Repair" },
+      "description": {
+        "zh-CN": "修复 UTF-8/GBK/Latin-1 互转造成的乱码，给出多个候选结果与置信度。",
+        "en": "Repair mojibake caused by UTF-8/GBK/Latin-1 mixups with ranked candidates."
+      },
+      "keywords": ["乱码", "mojibake", "gbk", "utf-8", "latin1", "编码", "修复", "charset"],
+      "tags": ["misc", "encoding"],
+      "privacy": "local",
+      "featured": false,
+      "order": 35,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "urlcode",
+      "slug": "url",
+      "aliases": ["urlencode", "urldecode", "htmlencode", "unicode"],
+      "category": "web",
+      "name": { "zh-CN": "URL / HTML / Unicode 转义", "en": "URL / HTML / Unicode Escaping" },
+      "description": {
+        "zh-CN": "URL 编解码、HTML 实体、Unicode 转义与还原，正确处理中文与特殊字符。",
+        "en": "URL encode/decode, HTML entities and unicode escapes."
+      },
+      "keywords": ["url", "urlencode", "urldecode", "html", "entity", "unicode", "转义", "百分号", "编码"],
+      "tags": ["web", "encoding"],
+      "privacy": "local",
+      "featured": true,
+      "order": 40,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "cipher",
+      "slug": "cipher",
+      "aliases": ["caesar", "rot13", "atbash", "vigenere", "morse"],
+      "category": "crypto",
+      "name": { "zh-CN": "古典密码工具箱", "en": "Classical Cipher Toolkit" },
+      "description": {
+        "zh-CN": "凯撒（含 26 位移暴力枚举）、ROT13、Atbash、维吉尼亚与摩斯电码。",
+        "en": "Caesar (with brute force), ROT13, Atbash, Vigenère and Morse code."
+      },
+      "keywords": ["凯撒", "caesar", "rot13", "atbash", "维吉尼亚", "vigenere", "摩斯", "morse", "古典密码"],
+      "tags": ["ctf", "crypto"],
+      "privacy": "local",
+      "featured": true,
+      "order": 45,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "xor",
+      "slug": "xor",
+      "aliases": ["xor-brute", "异或"],
+      "category": "crypto",
+      "name": { "zh-CN": "XOR 加解密与爆破", "en": "XOR Cipher & Brute Force" },
+      "description": {
+        "zh-CN": "密钥异或、单字节 256 键暴力破解（评分排序）、已知明文 crib 反推密钥。",
+        "en": "Key-based XOR, single-byte brute force with scoring and crib attacks."
+      },
+      "keywords": ["xor", "异或", "爆破", "brute", "crib", "单字节", "crypto"],
+      "tags": ["ctf", "crypto"],
+      "privacy": "local",
+      "featured": true,
+      "order": 50,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "symmetric",
+      "slug": "symmetric",
+      "aliases": ["aes", "des", "3des", "rc4", "aes-cbc"],
+      "category": "crypto",
+      "name": { "zh-CN": "AES / DES / RC4 加解密", "en": "AES / DES / RC4 Cipher" },
+      "description": {
+        "zh-CN": "AES（CBC/ECB/CTR/CFB/OFB）、DES/3DES 与 RC4，支持 hex/base64/文本密钥与多种填充。",
+        "en": "AES modes, DES/3DES and RC4 with hex/base64/text keys and multiple paddings."
+      },
+      "keywords": ["aes", "des", "3des", "tripledes", "rc4", "cbc", "ecb", "ctr", "对称加密", "加解密"],
+      "tags": ["ctf", "crypto"],
+      "privacy": "local",
+      "featured": true,
+      "order": 52,
+      "offline": true,
+      "since": "0.4.0"
+    },
+
+    {
+      "key": "radix",
+      "slug": "radix",
+      "aliases": ["base-convert", "进制", "bitwise"],
+      "category": "dev",
+      "name": { "zh-CN": "进制转换与位运算", "en": "Radix & Bitwise" },
+      "description": {
+        "zh-CN": "2/8/10/16 进制互转（支持超大整数）、按位与或异或取反与移位。",
+        "en": "Convert between bases with BigInt support, plus bitwise operations."
+      },
+      "keywords": ["进制", "radix", "binary", "hex", "octal", "位运算", "bitwise", "AND", "OR", "XOR", "移位"],
+      "tags": ["dev"],
+      "privacy": "local",
+      "featured": false,
+      "order": 55,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "jwt",
+      "slug": "jwt",
+      "aliases": ["jwt-decode", "jsonwebtoken"],
+      "category": "web",
+      "name": { "zh-CN": "JWT 解析与校验", "en": "JWT Decoder & Verifier" },
+      "description": {
+        "zh-CN": "解码 header/payload，校验 HS256/384/512 签名，提示 alg=none 与过期风险。",
+        "en": "Decode JWT header/payload and verify HS256/384/512 signatures."
+      },
+      "keywords": ["jwt", "token", "jsonwebtoken", "hs256", "签名", "解码", "bearer"],
+      "tags": ["web", "crypto"],
+      "privacy": "local",
+      "featured": true,
+      "order": 60,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "regex",
+      "slug": "regex",
+      "aliases": ["regexp", "正则"],
+      "category": "dev",
+      "name": { "zh-CN": "正则表达式测试", "en": "Regex Tester" },
+      "description": {
+        "zh-CN": "匹配高亮、分组与索引、替换预览，基于浏览器原生 RegExp，支持常用标志位。",
+        "en": "Highlight matches, inspect groups and preview replacements with native RegExp."
+      },
+      "keywords": ["正则", "regex", "regexp", "匹配", "替换", "分组", "capture"],
+      "tags": ["dev"],
+      "privacy": "local",
+      "featured": false,
+      "order": 65,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "timestamp",
+      "slug": "timestamp",
+      "aliases": ["time", "unix", "时间戳"],
+      "category": "dev",
+      "name": { "zh-CN": "时间戳转换", "en": "Timestamp Converter" },
+      "description": {
+        "zh-CN": "Unix 秒/毫秒与日期互转，展示 UTC、本地、ISO 与相对时间，支持自动识别单位。",
+        "en": "Convert Unix seconds/milliseconds to dates and back."
+      },
+      "keywords": ["时间戳", "timestamp", "unix", "date", "iso", "utc", "日期"],
+      "tags": ["dev"],
+      "privacy": "local",
+      "featured": false,
+      "order": 70,
+      "offline": true,
+      "since": "0.2.0"
+    },
+    {
+      "key": "rsa",
+      "slug": "rsa",
+      "aliases": ["rsa-attack", "rsa-tool"],
+      "category": "crypto",
+      "name": { "zh-CN": "RSA 工具箱", "en": "RSA Toolkit" },
+      "description": {
+        "zh-CN": "已知 p/q 求私钥并解密、小指数开方攻击、n 试除分解，支持十进制与十六进制。",
+        "en": "Recover RSA keys from p/q, small-exponent attacks and trial division."
+      },
+      "keywords": ["rsa", "ctf", "n", "e", "d", "pq", "小指数", "分解", "试除", "解密"],
+      "tags": ["ctf", "crypto"],
+      "privacy": "local",
+      "featured": false,
+      "order": 75,
+      "offline": true,
+      "since": "0.2.0"
+    }
+  ]
+}

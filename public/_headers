@@ -1,0 +1,29 @@
+# HanTools 安全与缓存策略（Cloudflare Workers Static Assets / Pages 均支持 _headers）
+#
+# CSP 的作用不只是安全：connect-src 'self' 从技术上保证“输入不会被发往第三方”，
+# 与隐私说明一致，且可在浏览器 DevTools 中直接验证。
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+/index.html
+  Cache-Control: no-cache
+
+/sw.js
+  Cache-Control: no-cache
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=3600
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 注意：Workers 的 html_handling=auto-trailing-slash 会把 /xxx.html 307 到 /xxx，
+# 所以离线包下载入口必须是无扩展名路径，Content-Disposition 也要配在无扩展名路径上。
+/hantools-offline
+  Cache-Control: public, max-age=3600
+  Content-Disposition: attachment; filename="hantools-offline.html"

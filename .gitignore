@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-offline/
+.wrangler/
+.wrangler-dry/
+.DS_Store
+*.local
+coverage/
+.vscode/
+.vitest-report.json

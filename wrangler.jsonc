@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hantools",
+  "compatibility_date": "2026-11-04",
+  // 保留 workers.dev 备用域：CTF 期间自定义域出现异常时仍可访问。
+  // 注意：配置里一旦出现 routes 而未显式声明 workers_dev，wrangler 会把 workers_dev
+  // 推断为 false，从而关闭 hantools.hanbaobo.workers.dev —— 所以这里必须显式写 true。
+  "workers_dev": true,
+  "routes": [{ "pattern": "tools.hanbaobo.cn", "custom_domain": true }],
+  "assets": {
+    "directory": "./dist",
+    // 未匹配到静态文件时回退到 index.html（SPA），
+    // 这样 /tools/base64 这类深链刷新不会 404。
+    "not_found_handling": "single-page-application",
+    "html_handling": "auto-trailing-slash"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
