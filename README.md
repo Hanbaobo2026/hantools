@@ -1,8 +1,11 @@
 # HanTools · CTF 与开发在线工具集
 
+[![CI](https://github.com/Hanbaobo2026/hantools/actions/workflows/ci.yml/badge.svg)](https://github.com/Hanbaobo2026/hantools/actions/workflows/ci.yml)
+
 面向 CTF 选手、学生与开发者的中文在线工具集。所有工具都在**浏览器本地**完成计算，不上传输入、不加载第三方脚本；同时支持 **PWA 离线**与**单文件离线版**，适合断网/内网赛场。
 
 - 线上地址：<https://tools.hanbaobo.cn>
+- 源码仓库：<https://github.com/Hanbaobo2026/hantools>
 - 工具数量：19 个（编码与杂项、密码学、Web、开发辅助）
 - 许可：MIT
 
